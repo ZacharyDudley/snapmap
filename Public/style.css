@@ -1,0 +1,94 @@
+/* --- ALL --- */
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* --- HEAD --- */
+#headBox {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 10%;
+  align-items: center;
+}
+
+#headBox-Title {
+}
+
+#headBox-Profile {
+  align-self: flex-end;
+}
+
+/* --- MAIN --- */
+#mainBody {
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 80%;
+  align-items: stretch;
+}
+
+/* --- SIDE --- */
+#sideBox {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 20%;
+  margin: 0.25rem;
+  border-style: solid;
+  border-width: thick;
+  border-color: black;
+}
+
+#sideBox-Title {
+  text-align: center;
+}
+
+#sideBox-List {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBox-ListItem {
+  padding: 0.5rem;
+}
+
+/* --- CONTENT --- */
+#mainBox {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 80%;
+  margin: 0.25rem;
+}
+
+.topicBox {
+  border-width: thick;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.topicBox-Title {
+
+}
+
+.topicBox-Issue {
+
+}
+
+/* --- FOOT --- */
+#footBox {
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 10%;
+  justify-content: space-evenly;
+}
+
+#footBox-Info {
+
+}

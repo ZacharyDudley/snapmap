@@ -1,0 +1,18 @@
+{
+  "name": "SnapMap",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon Server/app.js"
+  },
+  "author": "Zachary Dudley Friedman",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "pg": "^7.3.0",
+    "sequelize": "^4.16.1"
+  }
+}
