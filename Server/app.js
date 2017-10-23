@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const router = require('../Routes');
+const router = require('../routes');
 const app = express();
 const db = require('../db')
 
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.use('/', router);
 
 app.listen(3000, () => {
-  console.log('Server is listening.')
+  console.log('Server is listening on 3000.')
   db.sync()
   .then(() => {
     console.log('DB is Synced.')

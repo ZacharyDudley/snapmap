@@ -1,5 +1,5 @@
-const User = require('./User')
-const Picture = require('./Picture')
+const User = require('./user')
+const Picture = require('./picture')
 
 User.hasMany(Picture)
 Picture.belongsTo(User)

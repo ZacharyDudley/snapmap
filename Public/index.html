@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>What's Going On</title>
-
+  <title>snapMAP</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="style.css" />
-
 </head>
+
 <body>
-  <div id="app"></div>
-   <!--local JS dependencies, from Webpack -->
-  <!-- <script src="/bundle.js"></script> -->
+  <div id="app">
+
+  <div id="headBox">
+    <div id="headBox-Title">
+      <h1>snapMAP</h1>
+    </div>
+    <div id="headBox-Options">
+      <h4>POST A PIC</h4>
+      <h4>SEARCH FOR PICS</h4>
+    </div>
+  </div>
+
+  <div id="mainBody">
+
+    <div id="map"></div>
+
+    <div id="sideBox">
+        <div id="sideBox-Title">
+          <h3>TOPICS</h3>
+        </div>
+
+        <div id="sideBox-List">
+
+          <div class="sideBox-ListItem">
+            <h5>Topic</h5>
+          </div>
+
+          <div class="sideBox-ListItem">
+            <h5>Topic</h5>
+          </div>
+
+          <div class="sideBox-ListItem">
+            <h5>Topic</h5>
+          </div>
+
+          <div class="sideBox-ListItem">
+            <h5>Topic</h5>
+          </div>
+
+        </div>
+      </div>
+
+  </div>
+
+  <div id="footBox">
+    <div id="footBox-Info">
+      <h5>I MADE THIS</h5>
+    </div>
+  </div>
+
+  </div>
+
+  <script src="./bundle.js"></script>
 </body>
 </html>
