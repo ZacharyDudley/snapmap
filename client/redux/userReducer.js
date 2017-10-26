@@ -23,7 +23,7 @@ export default (state = initial, action) => {
   switch (action.type) {
 
     case GET_ALL_USERS:
-      return [...state.users]
+      return [...action.users]
 
     case GET_USER:
       return state.users.map(user => {

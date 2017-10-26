@@ -17,7 +17,7 @@ export default (pics = [], action) => {
   switch (action.type) {
 
     case GET_ALL_PICS:
-      return [...pics]
+      return [...action.pics]
 
     case GET_PIC:
     return pics.map(pic => {

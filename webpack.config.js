@@ -20,7 +20,11 @@ module.exports = {
         include: resolve(__dirname, './client'),
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'env']
+          presets: ['react', ['env', {
+            targets: {
+              node: 'current'
+            }
+          }]]
         }
       }
     ]

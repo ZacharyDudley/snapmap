@@ -6,21 +6,22 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import Root from './components/Root';
 import Home from './components/Home';
 import Map from './components/Map';
-import UploadPic from './components/UploadPic';
+import UploadMedia from './components/UploadMedia';
 // // import UserList from './components/User/UserList';
 // // import UserDetail from './components/User/UserDetail';
 // // import StoryList from './components/Story/StoryList';
 // // import StoryDetail from './components/Story/StoryDetail';
-// // import { fetchUsers } from './redux/users';
-// // import { fetchStories } from './redux/stories';
+import { fetchUsers } from './redux/userReducer';
+import { fetchPics } from './redux/picReducer';
+import { fetchMessages } from './redux/messageReducer';
 
 // /* -----------------    COMPONENT     ------------------ */
 
 class Routes extends Component {
 
-//   componentDidMount () {
-//     this.props.fetchInitialData();
-//   }
+  componentDidMount () {
+    this.props.fetchInitialData();
+  }
 
   render () {
     return (
@@ -29,7 +30,7 @@ class Routes extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/map" component={Map} />
-            <Route path="/upload" component={UploadPic} />
+            <Route path="/upload" component={UploadMedia} />
             <Route component={Home} />
           </Switch>
         </Root>
@@ -42,16 +43,15 @@ class Routes extends Component {
 
 const mapProps = null;
 
-// const mapDispatch = dispatch => ({
-//   fetchInitialData: () => {
-//     dispatch(fetchUsers());
-//     dispatch(fetchStories());
-//     // what other data might we want to fetch on app load?
-//   }
-// });
+const mapDispatch = dispatch => ({
+  fetchInitialData: () => {
+    dispatch(fetchUsers());
+    dispatch(fetchPics());
+    dispatch(fetchMessages());
+  }
+});
 
-export default connect(mapProps)(Routes);
-// export default connect(mapProps, mapDispatch)(Routes);
+export default connect(mapProps, mapDispatch)(Routes);
 
 // <Route exact path="/users" component={UserList} />
 // <Route path="/users/:id" component={UserDetail} />

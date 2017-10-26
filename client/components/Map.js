@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPics } from '../redux'
 
 import mapboxgl from 'mapbox-gl'
 import buildMarker from '../marker.js'
@@ -20,33 +19,30 @@ class Map extends Component {
     //   zoom: 10
     // }
     this.state = {
-      lon: 0,
-      lat: 0,
+      location: [-84.5120, 39.1031],
       zoom: 10
     }
   }
 
   componentDidMount() {
-    const success = pos => {
-      this.setState({
-        lon: pos.coords.longitude,
-        lat: pos.coords.latitude
-      })
-    }
-
-    const failure = err => {
-      console.error(err)
-    }
-
-    navigator.geolocation.watchPosition(success, failure)
-
-    console.log()
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v10',
-      center: [this.state.lon, this.state.lat],
+      center: this.state.location,
       zoom: 13
     })
+
+    this.map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }))
+  }
+
+  componentWillReceiveProps() {
+    const center = this.map.getCenter()
+    console.log(center)
   }
 
   componentWillUnmount() {
@@ -54,31 +50,31 @@ class Map extends Component {
   }
 
   render() {
+    console.log(this.state.location)
+    console.log(this.props)
+
     return (
-      <div ref={element => this.mapContainer = element} />
+      <div ref={element => this.mapContainer = element} >
+      {
+        this.props.messages.map( message => { buildMarker('message', message.location).addTo(this.map) })
+      }
+      </div>
     )
   }
 
-  mapPics() {
-    let arrayPics = this.props.fetchPics()
-    console.log(arrayPics)
+  mapMessages() {
+
   }
 }
 
 
 
 
-// {
-//   this.props.pics.map( pic => { buildMarker('pic', pic).addTo(map) })
-// }
-
-
 // const marker = buildMarker('self', userLoc);
 // marker.addTo(map);
 
-const mapProps = state => ({ pics: state.pics, loc: state.userLocation })
-const mapDispatch = { fetchPics }
-export default connect(mapProps, mapDispatch)(Map)
+const mapProps = state => ({messages: state.message})
+export default connect(mapProps)(Map)
 
 // const addButton = document.getElementsByClassName('options-btn');
 // const buttonsArray = Array.prototype.slice.call(addButton);

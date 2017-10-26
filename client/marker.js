@@ -2,7 +2,7 @@ const { Marker } = require("mapbox-gl");
 
 const iconURLs = {
   self: 'http://i.imgur.com/D9574Cu.png',
-  pic: 'http://i.imgur.com/WbMOfMl.png'
+  message: 'http://i.imgur.com/WbMOfMl.png'
 };
 
 const buildMarker = (type, coords) => {

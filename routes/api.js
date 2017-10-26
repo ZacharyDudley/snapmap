@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const User = require('../db/models/user')
 const Picture = require('../db/models/picture')
+const Message = require('../db/models/message')
 
 router.get('/', (req, res, next) => {
+
   let everything = {}
 
   User.findAll()
@@ -13,8 +15,10 @@ router.get('/', (req, res, next) => {
     })
     .then(pics => {
       everything.pictures = pics
+      return Message.findAll()
     })
-    .then( () => {
+    .then(messages => {
+      everything.messages = messages
       res.json(everything)
     })
     .catch(next)
@@ -54,6 +58,24 @@ router.post('/pictures', (req, res, next) => {
 router.get('/pictures/:pictureId', (req, res, next) => {
   Picture.findById(req.params.pictureId)
     .then(foundPic => res.json(foundPic))
+    .catch(next)
+})
+
+router.get('/messages', (req, res, next) => {
+  Message.findAll()
+    .then(messages => res.json(messages))
+    .catch(next)
+})
+
+router.post('/messages', (req, res, next) => {
+  Message.create(req.body)
+    .then(newMessage => res.status(201).json(newMessage))
+    .catch(next)
+})
+
+router.get('/messages/:messageId', (req, res, next) => {
+  Message.findById(req.params.messageId)
+    .then(foundMessage => res.json(foundMessage))
     .catch(next)
 })
 
