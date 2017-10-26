@@ -1,9 +1,28 @@
+'use strict';
+
+const { resolve } = require('path')
+
 module.exports = {
-  entry: './server/app.js', // the starting point for our program
+  entry: './client/index.js',
   output: {
-    path: __dirname + '/public', // the absolute path for the directory where we want the output to be placed
-    filename: 'bundle.js' // the name of the file that will contain our output - we could name this whatever we want, but bundle.js is typical
+    path: __dirname,
+    filename: './public/bundle.js'
   },
-  devtool: "source-map",
-  'target': 'node'
-}
+  context: __dirname,
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  module: {
+    loaders: [
+      {
+        test: /jsx?$/,
+        include: resolve(__dirname, './client'),
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'env']
+        }
+      }
+    ]
+  }
+};

@@ -45,6 +45,7 @@ router.get('/pictures', (req, res, next) => {
 })
 
 router.post('/pictures', (req, res, next) => {
+  console.log(req.body)
   Picture.create(req.body)
     .then(newPicture => res.status(201).json(newPicture))
     .catch(next)

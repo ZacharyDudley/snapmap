@@ -1,10 +1,15 @@
-// const success = (pos) => {
-//   console.log(pos)
-// }
+// export default getLocation = () => {
+//   var local;
 
-// const failure = (err) => {
-//   console.error(err.message)
-// }
-let loc = navigator.geolocation.watchPosition()
+//   const success = (pos) => {
+//     local = { lon: pos.coords.longitude, lat: pos.coords.latitude }
+//   }
 
-module.exports = [loc.latitude, loc.longitude]
+//   const failure = (err) => {
+//     console.error(err.message)
+//   }
+
+//   navigator.geolocation.watchPosition(success, failure)
+
+//   return local
+// }

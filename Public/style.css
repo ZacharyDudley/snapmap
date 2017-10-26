@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-#app {
+#main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +28,7 @@
 /* --- MAIN --- */
 #mainBody {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 0 1 80%;
   align-items: stretch;
 }
@@ -91,4 +91,12 @@
 
 #footBox-Info {
 
+}
+
+.mapboxgl-map {
+  /* display: inline-block; */
+  position: absolute;
+  top: 12rem;
+  bottom: 0;
+  width: 100%;
 }
