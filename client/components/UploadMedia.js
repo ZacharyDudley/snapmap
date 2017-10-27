@@ -34,13 +34,13 @@ class UploadMedia extends Component {
 
   render() {
     return (
-      <div>
-      <form onSubmit={this.submitHandler}>
+      <div id="upload">
+      <form id="messageForm" onSubmit={this.submitHandler}>
         <input name="message" type="text" placeholder="Message" onChange={this.changeHandler} />
         <button type="submit">POST</button>
       </form>
 
-      <form onChange={this.fileUpload}>
+      <form id="pictureForm" onChange={this.fileUpload}>
         <input id="fileInput" type="file" />
       </form>
       </div>

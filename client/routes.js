@@ -27,10 +27,10 @@ class Routes extends Component {
       <HashRouter>
         <Root>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Map} />
             <Route path="/map" component={Map} />
             <Route path="/upload" component={UploadMedia} />
-            <Route component={Home} />
+            <Route component={Map} />
           </Switch>
         </Root>
       </HashRouter>

@@ -1,6 +1,7 @@
 /* --- ALL --- */
 * {
   box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #main {
@@ -13,16 +14,30 @@
 /* --- HEAD --- */
 #headBox {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 0 1 10%;
-  align-items: center;
+  justify-content: space-around;
 }
 
 #headBox-Title {
+  flex: 0 1 80%;
+  align-self: flex-start;
+  padding-left: 4rem;
 }
 
-#headBox-Profile {
+#headBox-Title h1 {
+  font-size: 2.5rem;
+}
+
+#headBox-Options {
+  flex: 0 1 20%;
   align-self: flex-end;
+}
+
+#headBox-Options a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
 }
 
 /* --- MAIN --- */
@@ -96,7 +111,25 @@
 .mapboxgl-map {
   /* display: inline-block; */
   position: absolute;
-  top: 12rem;
+  top: 6rem;
   bottom: 0;
   width: 100%;
+}
+
+.mapboxgl-missing-css {
+  visibility: hidden;
+}
+
+#upload {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+#messageForm {
+  size: 2rem;
+  height: 4rem;
+}
+
+#pictureForm {
+  /* size: 2rem; */
 }

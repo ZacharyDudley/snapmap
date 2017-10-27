@@ -27266,10 +27266,10 @@ class Routes extends _react.Component {
         _react2.default.createElement(
           _reactRouterDom.Switch,
           null,
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Map2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/map', component: _Map2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/upload', component: _UploadMedia2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { component: _Home2.default })
+          _react2.default.createElement(_reactRouterDom.Route, { component: _Map2.default })
         )
       )
     );
@@ -30571,10 +30571,10 @@ class UploadMedia extends _react.Component {
   render() {
     return _react2.default.createElement(
       'div',
-      null,
+      { id: 'upload' },
       _react2.default.createElement(
         'form',
-        { onSubmit: this.submitHandler },
+        { id: 'messageForm', onSubmit: this.submitHandler },
         _react2.default.createElement('input', { name: 'message', type: 'text', placeholder: 'Message', onChange: this.changeHandler }),
         _react2.default.createElement(
           'button',
@@ -30584,7 +30584,7 @@ class UploadMedia extends _react.Component {
       ),
       _react2.default.createElement(
         'form',
-        { onChange: this.fileUpload },
+        { id: 'pictureForm', onChange: this.fileUpload },
         _react2.default.createElement('input', { id: 'fileInput', type: 'file' })
       )
     );
