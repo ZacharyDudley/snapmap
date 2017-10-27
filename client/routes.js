@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Router } from 'react-router';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 // // import history from './history';
 import Root from './components/Root';
@@ -51,7 +50,7 @@ const mapDispatch = dispatch => ({
   }
 });
 
-export default connect(mapProps, mapDispatch)(Routes);
+export default connect(mapProps, mapDispatch)(Routes)
 
 // <Route exact path="/users" component={UserList} />
 // <Route path="/users/:id" component={UserDetail} />

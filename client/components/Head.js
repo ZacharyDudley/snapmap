@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Head = () => (
   <div id="headBox">
@@ -8,8 +9,9 @@ const Head = () => (
     </div>
 
     <div id="headBox-Options">
-      <h4>POST A PIC</h4>
-      <h4>SEARCH FOR PICS</h4>
+      <Link to="/upload" >POST</Link>
+      <br />
+      <Link to="/map" >SEARCH</Link>
     </div>
 
   </div>
